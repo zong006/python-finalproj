@@ -12,6 +12,7 @@ RUN ./venv/bin/pip install --no-cache-dir -r requirements.txt
 
 
 ENV PATH="/app/venv/bin:$PATH"
+EXPOSE 5000
 
 
 CMD ["python", "app.py"]
