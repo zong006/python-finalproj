@@ -27,8 +27,16 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-    
+      - name: Install Railway CLI
+        run: |
+          curl -fsSL https://railway.app/install.sh | sh
+          echo "$HOME/.railway/bin" >> $GITHUB_PATH  # ✅ Add Railway to PATH
+  
       - name: Deploy to Railway
-        run: railway up --service=${{ env.PYTHON_API_RAILWAY_TOKEN }}  # Deploys to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
+        run: |
+          railway up          
+      
 
         # PYTHON_API_RAILWAY_TOKEN=b6b7c357-232d-47cb-b48b-d17dc1c0e707 railway up
