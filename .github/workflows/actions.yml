@@ -2,25 +2,25 @@ name: Deploy to Railway
 
 on:
   push:
-    branches: [main]  # Runs the workflow on pushes to the 'main' branch
+    branches: [main]  
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # container: ghcr.io/railwayapp/cli:latest  # Uses the Railway CLI container
+    
 
     env:
-      SVC_ID: python-finalproj  # Replace with your actual Railway Service ID
+      SVC_ID: python-finalproj  
       RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # Clones the repo into the GitHub runner
+        uses: actions/checkout@v3  
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"  # Ensure it matches your Flask app's Python version
+          python-version: "3.x" 
 
       - name: Install Dependencies
         run: |
@@ -34,9 +34,9 @@ jobs:
   
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  
         run: |
-          railway up          
+          railway up --service=python-finalproj          
       
 
-        # PYTHON_API_RAILWAY_TOKEN=62c3e8b0-37be-4da4-89e8-a6067c2c025a railway up
+        
