@@ -11,7 +11,7 @@ jobs:
 
     env:
       SVC_ID: python-finalproj  # Replace with your actual Railway Service ID
-      RAILWAY_TOKEN: ${{ secrets.PYTHON_API_RAILWAY_TOKEN }}
+      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
     steps:
       - name: Checkout Repository
@@ -34,7 +34,7 @@ jobs:
   
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.PYTHON_API_RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
         run: |
           railway up          
       
