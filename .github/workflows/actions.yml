@@ -34,7 +34,7 @@ jobs:
   
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
+          RAILWAY_TOKEN: ${{ secrets.PYTHON_API_RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
         run: |
           railway up          
       
