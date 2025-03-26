@@ -36,7 +36,7 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # ✅ Ensure Railway token is set in GitHub Secrets
         run: |
-          railway up --service=python-finalproj          
+          railway up          
       
 
-        # PYTHON_API_RAILWAY_TOKEN=b6b7c357-232d-47cb-b48b-d17dc1c0e707 railway up
+        # PYTHON_API_RAILWAY_TOKEN=62c3e8b0-37be-4da4-89e8-a6067c2c025a railway up
