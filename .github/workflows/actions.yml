@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: ghcr.io/railwayapp/cli:latest  # Uses the Railway CLI container
+    # container: ghcr.io/railwayapp/cli:latest  # Uses the Railway CLI container
 
     env:
       SVC_ID: python-finalproj  # Replace with your actual Railway Service ID
